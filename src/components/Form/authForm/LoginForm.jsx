@@ -32,6 +32,7 @@ export default function LoginForm() {
             type="email"
             name="email"
             required
+            autoComplete="true"
             placeholder="your-email@mail.com"
           />
         </label>
@@ -42,6 +43,7 @@ export default function LoginForm() {
             type="password"
             name="password"
             required
+            autoComplete="true"
             placeholder="********"
           />
         </label>

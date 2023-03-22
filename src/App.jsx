@@ -18,8 +18,6 @@ import Home from './page/Home';
 import Layout from '../src/components/Layout/Layout';
 import './App.module.scss';
 
-// import { ChakraProvider, Box } from '@chakra-ui/react';
-
 document.title = 'Phonebook_Redux';
 
 const RegisterPage = lazy(() => import('./page/Register'));
@@ -35,8 +33,6 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    // <ChakraProvider>
-    // <Box w="100%" h="100%" bgGradient="linear(to-l, #7928CA, #FF0080)">
     <Container>
       {isRefreshing ? (
         <NotificationContainer />
@@ -88,25 +84,6 @@ export default function App() {
         theme="light"
       />
     </Container>
-    //   </Box>
-    // </ChakraProvider>
+
   );
 }
-
-// #FF0080
-
-// import { Triangle } from 'react-loader-spinner';
-
-// {
-//   /* <Triangle
-//   height="80"
-//   width="80"
-//   color="blueviolet"
-//   ariaLabel="triangle-loading"
-//   wrapperStyle={{}}
-//   wrapperClassName=""
-//   visible={true}
-// /> */
-// }
-
-// #7928CA, #FF0080);
