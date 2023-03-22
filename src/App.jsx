@@ -38,7 +38,7 @@ export default function App() {
         <NotificationContainer />
       ) : (
         <Routes>
-          <Route exact path="/" element={<Layout />}>
+          <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
             <Route index element={<Home />} />
             <Route
               path="register"
@@ -84,6 +84,5 @@ export default function App() {
         theme="light"
       />
     </Container>
-
   );
 }
