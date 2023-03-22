@@ -1,51 +1,79 @@
 import React from 'react';
+import { useEffect, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+
+import { selectIsRefreshing } from './redux/auth/selectors';
+import NotificationContainer from '../src/components/NotificationContainer/NotificationContainer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Container from './components/Container';
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
-import NotificationContainer from 'components/NotificationContainer/NotificationContainer';
 
-import { selectIsLoading, selectError } from './redux/selectors';
-import { fetchContacts } from './redux/operations';
+import { PrivateRoute } from './components/PrivateRoutes';
+import { RestrictedRoute } from './components/RestrictedRoute';
+import { refreshUser } from './redux/auth/operations';
 
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import Home from './page/Home';
+import Layout from '../src/components/Layout/Layout';
+import './App.module.scss';
 
-import styles from './App.module.scss';
-
+// import { ChakraProvider, Box } from '@chakra-ui/react';
 
 document.title = 'Phonebook_Redux';
 
+const RegisterPage = lazy(() => import('./page/Register'));
+const LoginPage = lazy(() => import('./page/Login'));
+const ContactsPage = lazy(() => import('./page/Contacts'));
 
 export default function App() {
-    const dispatch = useDispatch();
-    const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  
-    useEffect(() => {
-      dispatch(fetchContacts());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
+    // <ChakraProvider>
+    // <Box w="100%" h="100%" bgGradient="linear(to-l, #7928CA, #FF0080)">
     <Container>
-      
-      {isLoading && !error && (
+      {isRefreshing ? (
         <NotificationContainer />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<RegisterPage />}
+                />
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+          </Route>
+        </Routes>
       )}
-
-      <h1 className={styles.title}>Phonebook</h1>
-
-      <ContactForm />
-
-      <h2 className={styles.title}>Contacts</h2>
-
-      <Filter />
-
-      <ContactList />
-
       <ToastContainer
         font-size="15px"
         position="top-right"
@@ -60,5 +88,25 @@ export default function App() {
         theme="light"
       />
     </Container>
+    //   </Box>
+    // </ChakraProvider>
   );
 }
+
+// #FF0080
+
+// import { Triangle } from 'react-loader-spinner';
+
+// {
+//   /* <Triangle
+//   height="80"
+//   width="80"
+//   color="blueviolet"
+//   ariaLabel="triangle-loading"
+//   wrapperStyle={{}}
+//   wrapperClassName=""
+//   visible={true}
+// /> */
+// }
+
+// #7928CA, #FF0080);

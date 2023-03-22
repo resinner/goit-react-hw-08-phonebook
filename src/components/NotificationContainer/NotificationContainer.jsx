@@ -7,7 +7,7 @@ export default function NotificationContainer() {
     <div className={styles.NotificationContainer}>
       {' '}
       <FallingLines
-        color="#8a2be2"
+        color="#7CFC00"
         width="100"
         visible={true}
         ariaLabel="falling-lines-loading"

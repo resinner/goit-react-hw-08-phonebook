@@ -1,0 +1,21 @@
+.userTitle {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+  
+.p {
+    font-size: 22px;
+  }
+  
+.button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    &:hover,
+    &:focus {
+      background-color: #FF0080;
+      color: #fff;
+      cursor: pointer;
+    }
+}

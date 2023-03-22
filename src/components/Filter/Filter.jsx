@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { setFilterContacts } from '../../redux/filtersSlice';
+import { setFilterContacts } from '../../redux/contacts/filtersSlice';
 
 import styles from './Filter.module.scss';
 
 export default function Filter() {
   const dispatch = useDispatch();
 
-    const handlerFilter = e => {
-      dispatch(setFilterContacts(e.target.value));
-    };
+  const handlerFilter = e => {
+    dispatch(setFilterContacts(e.target.value));
+  };
 
   return (
     <label className={styles.label}>
@@ -24,4 +24,4 @@ export default function Filter() {
       />
     </label>
   );
-};
+}

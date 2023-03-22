@@ -1,0 +1,24 @@
+.navBox {
+    display: flex;
+  justify-content: space-between;
+}
+
+
+.navAuthBox { 
+    display: flex;
+  gap: 25px;
+}
+
+.nav {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  &:hover,
+  &:focus {
+    color: #FF0080;
+  }
+  &.active {
+    color: #FF0080;
+  }
+}

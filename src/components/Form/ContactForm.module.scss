@@ -4,7 +4,9 @@
   margin-left: auto;
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #7928CA;
+  border-radius: 4%;
+  // text-align: center;
 
   @media screen and (min-width: 768px) {
     width: 350px;
@@ -30,7 +32,7 @@
 
   &:focus {
     outline: transparent;
-    border: 2px solid #f6bd03;
+    border: 1px solid #FF0080;
   }
 }
 
@@ -44,8 +46,12 @@
   border: 0px solid transparent;
   border-radius: 4px;
 
+display: block;
+margin-left: auto;
+margin-right: auto;
+
   color: #fff;
-  background-color: #f6bd03;
+  background-color: #7928CA;
 
   box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
 
@@ -61,4 +67,8 @@
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+}
+
+h2{
+  color: blueviolet;
 }
