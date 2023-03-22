@@ -38,7 +38,7 @@ export default function App() {
         <NotificationContainer />
       ) : (
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route exact path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route
               path="register"
