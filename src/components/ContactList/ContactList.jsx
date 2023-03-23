@@ -33,7 +33,9 @@ export default function ContactList() {
       {visibilityContacts.map(contact => (
         <li className={styles.item} key={contact.id}>
           <span className={styles.name}>{contact.name}: </span>
-          <span className={styles.number}>{contact.number}</span>
+          <a href={`tel:${contact.number}`} className={styles.number}>
+            {contact.number}
+          </a>
           <button
             className={styles.button}
             type="button"

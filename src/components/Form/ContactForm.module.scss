@@ -6,7 +6,6 @@
   padding: 15px;
   border: 1px solid #7928CA;
   border-radius: 4%;
-  // text-align: center;
 
   @media screen and (min-width: 768px) {
     width: 350px;
@@ -32,7 +31,7 @@
 
   &:focus {
     outline: transparent;
-    border: 1px solid #ffcc00;
+    border: 1px solid #FF0080;
   }
 }
 
