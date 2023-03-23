@@ -1,0 +1,51 @@
+.container{
+  border: 1px solid rgb(176 176 176);
+  padding: 15px 30px;
+  max-width: 650px;
+  min-height: calc(100vh - 570px);
+  margin: 0 auto;
+  box-shadow: 0 0 10px 2px #787878bf;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.header{
+  padding-bottom: 10px;
+  margin: 0 auto;
+  border-bottom: 1px solid #787878;
+}
+
+.pageContainer {
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 80vh;
+
+  p.TextAuth {
+    font-size: 20px;
+    padding-top: 15px;
+  }
+  a {
+    &:hover,
+    &:focus {
+      color: blueviolet;
+    }
+  }}
+
+.footer {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-top: 1px solid #787878;
+  padding: 10px;
+  a {
+    color: blueviolet;
+    &:hover,
+    &:focus {
+      color: #FF0080;
+    }
+  }}

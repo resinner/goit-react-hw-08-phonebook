@@ -1,0 +1,25 @@
+ .h1 {
+    font-size: 30px;
+    text-align: center;
+  
+    &::first-letter {
+      color:blueviolet;
+    }
+  }
+
+.p {
+    font-size: 20px;
+    text-align: center;
+   padding: 8px;
+     color: blueviolet;
+  }
+
+.span {
+    color: blueviolet;
+  }
+
+  .spinner{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
