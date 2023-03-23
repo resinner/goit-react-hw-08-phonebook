@@ -13,7 +13,7 @@ export default function ContactForm() {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    const number = form.number.value;
+    const phone = form.number.value;
 
     if (
       contacts.find(
@@ -23,7 +23,7 @@ export default function ContactForm() {
       return toast.warn(`${name} is alredy in contacts.`);
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(addContact({ name, phone }));
 
     toast.success(`${name} is added to the contact list!`);
 

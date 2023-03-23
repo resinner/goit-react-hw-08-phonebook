@@ -18,6 +18,7 @@ import Home from './page/Home';
 import Layout from '../src/components/Layout/Layout';
 import './App.module.scss';
 
+
 document.title = 'Phonebook_Redux';
 
 const RegisterPage = lazy(() => import('./page/Register'));
@@ -33,12 +34,14 @@ export default function App() {
   }, [dispatch]);
 
   return (
+   
     <Container>
       {isRefreshing ? (
         <NotificationContainer />
       ) : (
         <Routes>
-          <Route
+            <Route
+              exact
             path="/"
             element={<Layout />}
           >
@@ -70,7 +73,7 @@ export default function App() {
                 />
               }
             />
-          </Route>
+            </Route>
         </Routes>
       )}
       <ToastContainer

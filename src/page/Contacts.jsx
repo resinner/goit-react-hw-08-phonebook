@@ -28,7 +28,7 @@ export default function App() {
     <Container>
       {isLoading && !error && <NotificationContainer />}
 
-      <h1 className={styles.title}>Your Phonebook </h1>
+      <h1 className={styles.title}>Phonebook</h1>
 
       <ContactForm />
 
