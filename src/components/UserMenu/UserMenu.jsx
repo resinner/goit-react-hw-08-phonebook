@@ -10,7 +10,6 @@ export default function UserMenu() {
 
   return (
     <div className={styles.userTitle}>
-  
       <AiFillGithub size= "1.5em"/>
       <p className={styles.p}>Welcome, {user.name}</p>
       <button
